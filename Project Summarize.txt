@@ -1,0 +1,22 @@
+## Project Summary
+## I have built a sentiment analysis classifier on the IMDB movie review dataset using a GPT-style transformer model from scratch in PyTorch. Here's what was accomplished end to end:
+## Data Pipeline
+
+## Loaded 50,000 raw .txt reviews from the aclImdb dataset (25k train, 25k test) using os and a custom load_reviews() function
+## Created labels (1 = positive, 0 = negative) and verified the dataset is perfectly balanced — 12,500 reviews per class per split
+## Wrapped the data in a custom IMDBDataset class that tokenizes text on the fly using a HuggingFace tokenizer with padding and truncation to MAX_LENGTH
+
+## Model Architecture
+
+## Built a DemoGPT model using token embeddings + positional embeddings fed into stacked Block transformer layers
+## Applied mean pooling across the time dimension to produce a fixed-size sentence representation
+## Added a linear classifier head (nn.Linear(d_embed, num_classes)) to output binary logits
+
+## Training
+
+## Trained for 3 epochs using AdamW optimizer (lr=3e-4) and CrossEntropyLoss
+## Logged loss every 100 steps and evaluated validation accuracy at the end of each epoch using calculate_accuracy()
+
+
+## Key Take Aways 
+## I have learned How to train a Model from scratch using some data and creating train data and test data and identifying the accurancy 
